@@ -1,0 +1,40 @@
+<html>
+<body>
+
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+</style>
+<a href="{% url 'front' %}">back</a><br/>
+<table>
+  <tr>
+    <th>auction id</th>
+    <th>item id</th>
+    <th>Buyout</th>
+    <th>Quantity</th>
+    <th>Owner</th>
+    <th>Time</th>
+    <th>Expires</th>
+  </tr>
+{% for auction in auctions %}
+  <tr>
+    <td>{{ auction.auc }}</td>
+    <td>{{ auction.item }}</td>
+    <td>{{ auction.buyout }}</td>
+    <td>{{ auction.quantity }}</td>
+    <td>{{ auction.owner }} </td>
+    <td>{{ auction.timeLeft }}</td>
+    <td>{{ auction.expires }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
