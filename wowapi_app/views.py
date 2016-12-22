@@ -19,15 +19,15 @@ def update(request):
 	# Send a request for the url and get a Response object
 	response = requests.get(url)
 	# Turn the Response object into a json 
-	json_obj = response.json()
+	json_obj1 = response.json()
 	# Get the URL to the AH-json from the json.
-	url = json_obj['files'][0]['url']
+	url = json_obj1['files'][0]['url']
 	# Send a request for the url and get a Response object
 	response = requests.get(url)
 	# Turn the response object into a json
-	json_obj = response.json()
+	json_obj2 = response.json()
 	# Get all of the auctions from the json
-	auctions = json_obj['auctions']
+	auctions = json_obj2['auctions']
 	print()
 	print("input | data |{0:30s}|time".format("function"))
 	print_status(auctions,'start',time.time()-time.time())
